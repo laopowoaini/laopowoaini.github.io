@@ -3,6 +3,7 @@ const FIREWORK_CHANCE = 0.02; // percentage, set to 0 and click instead
 const BASE_PARTICLE_SPEED = 0.6; // between 0-4, controls the size of the overall fireworks
 const FIREWORK_LIFESPAN = 600; // ms
 const PARTICLE_INITIAL_SPEED = 4.5; // 2-8
+var stopFireworks = false;
 
 function fireworkon(){
     // fun options!
@@ -12,7 +13,7 @@ function fireworkon(){
     const GRAVITY = 30;
 
 
-    const canvas = document.getElementById('canvas');
+    const canvas = document.getElementById('fireworks');
     const ctx = canvas.getContext('2d');
 
     let particles = [];
@@ -20,27 +21,27 @@ function fireworkon(){
     let resetDisable = 0;
 
     let loop = () => {
-    
-    if (!disableAutoFireworks && Math.random() < FIREWORK_CHANCE) {
-        createFirework();
-    }
-    
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
-    particles.forEach((particle, i) => {
-        particle.animate();
-        particle.render();
-        if (particle.y > canvas.height 
-            || particle.x < 0 
-            || particle.x > canvas.width
-            || particle.alpha <= 0
-        ) {
-        particles.splice(i, 1);
+        
+        if (!disableAutoFireworks && Math.random() < FIREWORK_CHANCE && !stopFireworks) {
+            createFirework();
         }
-    });
-    
-    requestAnimationFrame(loop);
-    
+        
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        particles.forEach((particle, i) => {
+            particle.animate();
+            particle.render();
+            if (particle.y > canvas.height 
+                || particle.x < 0 
+                || particle.x > canvas.width
+                || particle.alpha <= 0
+            ) {
+            particles.splice(i, 1);
+            }
+        });
+        
+        requestAnimationFrame(loop);
+        
     };
 
     let createFirework = (

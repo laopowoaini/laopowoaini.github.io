@@ -10,7 +10,7 @@
     <title>给老婆酱的一封信</title>
 </head>
 <body>
-    <div id="fps">--</div>
+    <div id="fps">00.0</div>
     <font id="text">给老婆酱的一封信</font>
     <div id="letter">
         <div id="l-main"></div>
@@ -20,12 +20,13 @@
         <div id="l-circle"></div>
         <font id="l-cfont" onclick="openletter()">开</font>
     </div>
-    <textarea id="l-words" readonly>宝宝，
-    今天是你生日，而不知不觉我们已经在一起半年了。今天我送了你一束花，也想不到还能送什么了，所以就自己写了个网页，给你写了封信。这半年来感谢有你的陪伴，希望未来我们的感情会越来越好，直到永远。我会永远爱着你的！
-    --2022年6月25日</textarea><next id="next">继续</next>
+    <textarea id="l-words" readonly>宝宝，。。
+        。。
+        。。
     </textarea>
+    <next id="next">继续</next>
     <font id="loveyou">叶子渲我爱你!</font>
-    <canvas id="canvas"></canvas>
+    <canvas id="fireworks"></canvas>
     <div id="black"></div>
     <div id="load">
         <div class="main">
@@ -83,20 +84,15 @@
             }, 3000);
 
             setTimeout(function(){
+                getById("letter").remove();
                 getById("next").style.opacity = "1";
             }, 4000);
         });
 
         getById("next").addEventListener("click",function(){
             // disappear all element
-            getById("l-main").style.display = "none";
-            getById("l-cover").style.display = "none";
-            getById("l-circle").style.display = "none";
-            getById("l-cfont").style.display = "none";
             getById("l-words").style.display = "none";
             getById("next").style.display = "none";
-            getById("l-body").style.display = "none";
-            getById("tips").style.display = "none";
             getById("text").style.display = "none";
             document.body.style.backgroundColor = "black";
             setTimeout(function(){

@@ -203,7 +203,7 @@ body{
     animation: jump .6s infinite;
 }
 
-next{
+#next{
     position: fixed;
     height: 80px;
     width: 80px;
@@ -234,7 +234,7 @@ next{
 
 }
 
-canvas{
+#fireworks{
     position: fixed;
     top: 0;
     left: 0;
@@ -256,6 +256,6 @@ canvas{
 
 #fps{
     position: fixed;
-    color: rgba(255, 255, 255, 0.286);
+    color: rgba(255, 255, 255, 0);
     z-index: 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
 }
