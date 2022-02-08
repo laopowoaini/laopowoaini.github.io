@@ -1,0 +1,261 @@
+body{
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    background-color: #070625e6;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    margin: 0;
+
+}
+
+#text{
+    position: absolute;
+    font-size: 35px;
+    color: white;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 290px;
+    text-align: center;
+    top: 150px;
+    transition: 1.5s;
+}
+
+#letter{
+    position: absolute;
+    width: 292px;
+    height: 220px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 245px;
+}
+
+#l-body{
+    position: absolute;
+    width: 272px;
+    height: 211px;
+    top: 33px;
+    background: #CBEAF3;
+    border: 10px solid #FF7777;
+    border-radius: 0px 0px 10px 10px;
+    z-index: 5;
+}
+
+#l-cover{
+    top: 33px;
+    position: absolute;
+    transform: rotate3d(0,0,0,-180deg);
+    transform-origin: top left;
+    transition: 1s;
+    z-index: 6;
+}
+
+#l-circle{
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #FF7777;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 101px;
+    border: 5px solid #CBEAF3;
+    z-index: 7;
+    transition: 1s;
+}
+
+#l-cfont{
+    position: absolute;
+    width: 23px;
+    height: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 112px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    text-align: center;
+
+    color: #FFFFFF;
+    transition: .6s;
+
+    z-index: 8;
+}
+
+#l-main{
+    position: absolute;
+    width: 257px;
+    height: 58px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -25px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    transition: 1s;
+    z-index: 4;
+}
+
+#l-words{
+    position: absolute;
+    height: 100vh;
+    width: calc(100vw - 40px);
+    top: 0;
+    left: 0;
+    background: #fff;
+    z-index: -3;
+    padding: 20px;
+    font-size: 24px;
+    font-family: Roboto;
+    margin: 0;
+    outline: none;
+    border: none;
+    resize: none;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+#tips{
+    position: absolute;
+    left: 50%;
+    top: -50px;
+    transform: translateX(-50%);
+    z-index: 9;
+    color: white;
+    background: #081109ae;
+    padding: 5px;
+    border-radius: 5px;
+    height: 20px;
+    width: 115px;
+    text-align: center;
+    opacity: 0;
+    transition: 2s;
+}
+
+#tips::before{
+    content: "";
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #081109ae;
+    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.5));
+}
+
+#load{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: #070625;
+    z-index: 9999999;
+    transition: opacity .5s;
+}
+
+#heart {
+    background-color: red;
+    display: inline-block;
+    position: relative;
+    transform: rotate(-45deg) translateX(-50%);
+    height: 60px;
+    width: 60px;
+    top: 40%;
+    left: 50%;
+}
+  
+#heart:before,
+#heart:after {
+    content: "";
+    background-color: red;
+    border-radius: 50%;
+    height: 60px;
+    position: absolute;
+    width: 60px;
+}
+  
+#heart:before {
+    top: -30px;
+    left: 0;
+}
+  
+#heart:after {
+    left: 30px;
+    top: 0;
+}
+
+.main{
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: jump .6s infinite;
+}
+
+next{
+    position: fixed;
+    height: 80px;
+    width: 80px;
+    font-size: 24px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    bottom: 40px;
+    right: 40px;
+    border-radius: 50%;
+    background-color: #070625;
+    transition: .5s;
+    z-index: 66666666;
+}
+
+@keyframes jump {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.15);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+}
+
+canvas{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999999999999999999999999999;
+}
+
+
+#loveyou{
+    position: fixed;
+    top: 60px;
+    width: 100vw;
+    z-index: 999999999999999999999999999999;
+    font-size: 40px;
+    color: white;
+    text-align: center;
+    opacity: 0;
+    transition: 1s;
+}
+
+#fps{
+    position: fixed;
+    color: rgba(255, 255, 255, 0.286);
+    z-index: 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
+}
